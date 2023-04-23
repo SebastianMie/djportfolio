@@ -29,13 +29,13 @@ function Navbar() {
           {showDropdown && (
           <div className="dropdown">
             <div className="col-span-12 flex">
+              <Link to="/informations" className="element-standard mb-2">Information</Link>
+            </div>
+            <div className="col-span-12 flex">
               <Link to="/genres" className="element-standard mb-2 flex">Genres</Link>
             </div>
             <div className="col-span-12 flex">
-              <Link to="/information" className="element-standard mb-2">Information</Link>
-            </div>
-            <div className="col-span-12 flex">
-              <Link to="/music" className="element-standard mb-2">Music</Link>
+              <Link to="/contact" className="element-standard mb-2">Kontakt</Link>
             </div>  
           </div>
         )}

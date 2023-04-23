@@ -4,19 +4,18 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Genres from './components/Genres';
 import Informations from './components/Informations';
-import Music from './components/Music';
+import Contact from './components/Contact';
 import './styles.css';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Home />
         <Routes>
-          <Route path="/" component={Home} />
-          <Route path="/genres" component={Genres} />
-          <Route path="/information" component={Informations} />
-          <Route path="/music" component={Music} />
+          <Route path="/" element={<Home />} />
+          <Route path="/informations" element={<Informations />} />
+          <Route path="/genres" element={<Genres />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
     </Router>
   );
