@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #070707;
+  }
+  
+  /* Set dark grey background for the navbar */
+.navbar {
+    background-color: #1d1b1b;
+}
+
+.home-outer {
+    background-color: #f1eded;
+}
+
+/* Font Styles */
+/* Bold white text */
+.bold-white {
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  /* Large bold white text */
+  .large-bold-white {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  /* Medium bold white text with black border */
+  .medium-bold-white {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  /* Small bold white text with light gray background */
+  .small-bold-white {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #f3f3f3;
+  }
