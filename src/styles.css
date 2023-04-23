@@ -8,11 +8,12 @@ body {
   
   /* Set dark grey background for the navbar */
 .navbar {
-    background-color: #1d1b1b;
+    background-color: #000000;
 }
 
 .home-outer {
-    background-color: #f1eded;
+    background-color: #a19f9f;
+    padding: 1rem;
 }
 
 /* Font Styles */
@@ -43,4 +44,50 @@ body {
     font-weight: bold;
     color: #ffffff;
     background-color: #f3f3f3;
+  }
+
+
+  /* Elements*/
+  .element-standard {
+    font-size: 10pt;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+    border-radius: 0.25rem;
+    transition: background-color ;
+    background-color: #333333;
+    
+  }
+
+  .row-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .dropdown {
+    background-color: #1d1b1b;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  /* Buttons*/
+  .button-dropdown {
+    border: none;
+    background-color: #1d1b1b;
+    color: #fff;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  .picture-standard {
+    padding: 0.25rem;
+    height: 100%;
+    width: 100%;
+  }
+  .logo-standard {
+    padding: 0.25rem;
+    height: 80px;
+    width: 110px;
   }
