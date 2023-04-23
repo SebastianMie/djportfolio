@@ -66,7 +66,7 @@ body {
   }
 
   .dropdown {
-    background-color: #1d1b1b;
+    background-color: #000000;
     display: flex;
     align-items: stretch;
     flex-direction: column;
@@ -75,7 +75,7 @@ body {
   /* Buttons*/
   .button-dropdown {
     border: none;
-    background-color: #1d1b1b;
+    background-color: #000000;
     color: #fff;
     margin-right: 0.5rem;
     cursor: pointer;
@@ -86,8 +86,21 @@ body {
     height: 100%;
     width: 100%;
   }
+
   .logo-standard {
     padding: 0.25rem;
     height: 80px;
     width: 110px;
+  }
+
+  .modal-icon {
+    padding: 0.4rem;
+    height: 50px;
+    width: 50px;
+  }
+ 
+  .modal {
+    z-index: 9999; /* hoher Wert, um es immer über anderen Elementen zu positionieren */
+    width: 130px;
+    height: 80px;
   }

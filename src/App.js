@@ -6,6 +6,7 @@ import Genres from './components/Genres';
 import Informations from './components/Informations';
 import Contact from './components/Contact';
 import './styles.css';
+import tatto_drip from './assets/pictures/tatto_drip.png';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/genres" element={<Genres />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <img src={tatto_drip} alt="tatto_drip" />
     </Router>
   );
 }

@@ -1,44 +1,57 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faInfoCircle, faMusic, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo1 from '../assets/logos/logo_black.png';
+import logo2 from '../assets/logos/logo_glow.png';
 
 function Navbar() {
-  const [showDropdown, setShowDropdown] = useState(false);
+  let [showModal, setShowModal] = useState(false);
 
-  const toggleDropdown = () => setShowDropdown(!showDropdown);
+  const handleModalOpen = () => {
+      setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const dropdownItems = [
+    { id: 1, label: 'Information', url: '/informations', component: 'Informations', icon: faInfoCircle },
+    { id: 2, label: 'Genres', url: '/genres', component: 'Genres', icon: faMusic },
+    { id: 3, label: 'Kontakt', url: '/contact', component: 'Contact', icon: faEnvelope },
+  ];
 
   return (
     <nav className="navbar h-40 rounded-lg">
       <div className="row-container">
         <div className="col-span-6 flex items-center">
-            <Link to="/">
-            <img className="logo-standard" src={logo1} alt="logo1" />
-            </Link>
+          <Link to="/">
+            <img className="logo-standard" src={logo2} alt="logo2" />
+          </Link>
         </div>
         <div className="col-span-5 flex items-center">
-            <Link to="/">
+          <Link to="/">
             <span className="large-bold-white">UNTIL DJ</span>
-            </Link>
+          </Link>
         </div>
         <div className="col-span-1 flex items-center">
-          <button onClick={toggleDropdown} className="button-dropdown">
-            <FontAwesomeIcon icon={faAngleDown} />
+          <button onClick={() => handleModalOpen()} className={`button-dropdown ${showModal ? 'open' : ''}`}>
+            <FontAwesomeIcon icon={faAngleDown} rotation={showModal ? 90 : 0} />
           </button>
-          {showDropdown && (
-          <div className="dropdown">
-            <div className="col-span-12 flex">
-              <Link to="/informations" className="element-standard mb-2">Information</Link>
-            </div>
-            <div className="col-span-12 flex">
-              <Link to="/genres" className="element-standard mb-2 flex">Genres</Link>
-            </div>
-            <div className="col-span-12 flex">
-              <Link to="/contact" className="element-standard mb-2">Kontakt</Link>
-            </div>  
-          </div>
-        )}
+        </div>
+      </div>
+      <div className="row-container" hidden={!showModal}>
+      <div className="modal col-span-4 flex items-center" hidden={!showModal}>
+      <ul>
+          {dropdownItems.map(item => (
+            <li key={item.id} className="button-dropdown">
+              <Link to={item.url} className="modal-link" onClick={handleModalClose}>
+                <span className="modal-icon"><FontAwesomeIcon icon={item.icon} /></span>
+                <span className="modal-text">{item.label}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
         </div>
       </div>
     </nav>
