@@ -23,7 +23,7 @@ function Navbar() {
 
   return (
     <nav className="navbar h-40 rounded-lg">
-      <div className="row-container top-to-bottom-colorflow">
+      <div className="row-container diagonal-colorflow">
         <div className="col-span-6 flex items-center">
           <Link to="/">
             <img className="logo-standard" src={logo2} alt="logo2" />
@@ -44,7 +44,7 @@ function Navbar() {
       <div className="modal rounded col-span-4 flex items-center" hidden={!showModal}>
       <ul>
           {dropdownItems.map(item => (
-            <li key={item.id} className="top-to-bottom-colorflow button-dropdown">
+            <li key={item.id} className="top-to-bottom-colorflow">
               <Link to={item.url} className="modal-link" onClick={handleModalClose}>
                 <span className="modal-icon"><FontAwesomeIcon icon={['faLight', 'faEnvelope']}/></span>
                 <span className="bold-white">{item.label}</span>
