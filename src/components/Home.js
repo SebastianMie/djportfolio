@@ -3,7 +3,7 @@ import pic from '../assets/pictures/tatto4.png';
 
 function Home() {
   return (
-    <div className="home-outer">
+    <div className="home-outer top-to-bottom-colorflow">
       <div className="row-container">
       <div className="col-span-6 flex items-center">
         <img className="picture-standard" src={pic} alt="pic" />

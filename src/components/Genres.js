@@ -2,7 +2,7 @@ import React from "react";
 
 function Genres() {
   return (
-    <div className="home-outer">
+    <div className="home-outer top-to-bottom-colorflow">
       <h1 className="large-bold-white">Meine fav. Musikgenres</h1>
       <ul className="bold-white">
         <li>DnB</li>

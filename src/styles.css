@@ -70,37 +70,73 @@ body {
     display: flex;
     align-items: stretch;
     flex-direction: column;
+    border-radius: 1rem;
   }
 
   /* Buttons*/
   .button-dropdown {
-    border: none;
-    background-color: #000000;
-    color: #fff;
-    margin-right: 0.5rem;
+    margin: 0.25rem;
     cursor: pointer;
   }
 
   .picture-standard {
     padding: 0.25rem;
-    height: 100%;
-    width: 100%;
+    height: 80%;
+    width: 80%;
+    border-radius: 1rem;
   }
 
   .logo-standard {
     padding: 0.25rem;
-    height: 80px;
-    width: 110px;
+    height: 90px;
+    width: 125px;
   }
 
   .modal-icon {
     padding: 0.4rem;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
   }
  
   .modal {
+    margin-top: 5px;
     z-index: 9999; /* hoher Wert, um es immer über anderen Elementen zu positionieren */
-    width: 130px;
-    height: 80px;
+    width: 125px;
+    height: 95px;
+  }
+
+  .informationfield {
+    background-image: url('./assets/pictures/tatto4.png');
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 1400px;
+    max-height: 1400px;
+  }
+
+  .rounded {
+    border-radius: 0.5rem;
+  }
+  
+  /* Farbverlauf von links nach rechts für eine CSS-Klasse */
+  .colorflow {
+    background: linear-gradient(to left, #9eb1b1, #000000);
+  }
+
+  .colorflow1 {
+    background: linear-gradient(to right, #9eb1b1, #000000);
+  }
+
+  .diagonal-colorflow {
+    background: linear-gradient(to bottom right, #000000, #9eb1b1);
+  }
+
+  .top-to-bottom-colorflow {
+    background: linear-gradient(#000000, #9eb1b1);
+  }
+
+  .bottom-to-top-colorflow {
+    background: linear-gradient(#9eb1b1, #000000);
   }

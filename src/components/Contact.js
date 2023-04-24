@@ -2,7 +2,7 @@ import React from 'react';
 
 function Contact() {
   return (
-    <div className="home-outer">
+    <div className="home-outer top-to-bottom-colorflow rounded">
       <div className="flex flex-col justify-center items-center mt-10">
         <h1 className="large-bold-white">Contact Me</h1>
         <ul className="bold-white">

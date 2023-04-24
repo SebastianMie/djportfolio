@@ -2,7 +2,7 @@ import React from "react";
 
 function Informations() {
   return (
-    <div className="home-outer">
+    <div className="home-outer top-to-bottom-colorflow">
       <h1 className="large-bold-white">Informationen</h1>
       <p className="bold-white">
         Mein Traum ist es, meine lebenslange Leidenschaft, <br></br>
