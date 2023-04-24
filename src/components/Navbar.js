@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo2 from '../assets/logos/logo_black.png';
+import logo2 from '../assets/logos/logo_black1.png';
 
 function Navbar() {
   let [showModal, setShowModal] = useState(false);

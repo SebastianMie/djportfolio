@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    background-color: #070707;
+    background-color: #000000;
   }
   
   /* Set dark grey background for the navbar */
@@ -12,9 +12,10 @@ body {
 }
 
 .home-outer {
-    background-color: #a19f9f;
+    background-color: #000000;
     padding: 1rem;
 }
+
 
 /* Font Styles */
 /* Bold white text */
@@ -54,15 +55,39 @@ body {
     margin-bottom: 0.25rem;
     border-radius: 0.25rem;
     transition: background-color ;
-    background-color: #333333;
+    background-color: #000000;
     
   }
 
   .row-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  .row-container-home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: top;
+  }
+
+  .home-text-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .home-picture-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    align-items: center;
   }
 
   .dropdown {
@@ -81,14 +106,26 @@ body {
 
   .picture-standard {
     padding: 0.25rem;
-    height: 80%;
-    width: 80%;
+    height: 60%;
+    width: 90%;
     border-radius: 1rem;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .picture-home {
+    padding: 0.25rem;
+    max-height: 1000px;
+    max-width: 100%;
+    border-radius: 1rem;
+    display: flex;
+    align-self: center;
   }
 
   .logo-standard {
     padding: 0.25rem;
-    height: 90px;
+    height: 70px;
     width: 125px;
   }
 
