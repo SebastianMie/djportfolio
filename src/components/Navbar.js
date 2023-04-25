@@ -6,22 +6,29 @@ import logo2 from '../assets/logos/logo_black1.png';
 
 function Navbar() {
   let [showModal, setShowModal] = useState(false);
+let [dropdownItemsShown, setDropdownItemsShown] = useState(false);
 
-  const handleModalOpen = () => {
-      setShowModal(!showModal);
-  };
+const handleModalOpen = () => {
+  setShowModal(!showModal);
 
-  const handleModalClose = () => {
-    setShowModal(false);
-  };
+  // Rufe die Dropdown-Elemente verzögert auf
+  setTimeout(() => {
+    setDropdownItemsShown(true);
+  }, 100);
+};
 
-  const dropdownItems = [
-    { id: 1, label: 'Information', url: '/informations', component: 'Informations', icon: faInfoCircle },
-    { id: 2, label: 'Genres', url: '/genres', component: 'Genres', icon: faMusic },
-    { id: 3, label: 'Kontakt', url: '/contact', component: 'Contact', icon: faEnvelope },
-  ];
+const handleModalClose = () => {
+  setShowModal(false);
+  setDropdownItemsShown(false);
+};
 
-  return (
+const dropdownItems = [
+  { id: 1, label: 'Information', url: '/informations', component: 'Informations', icon: faInfoCircle },
+  { id: 2, label: 'Genres', url: '/genres', component: 'Genres', icon: faMusic },
+  { id: 3, label: 'Kontakt', url: '/contact', component: 'Contact', icon: faEnvelope },
+];
+
+return (
     <nav className="navbar h-40 rounded-lg">
       <div className="row-container diagonal-colorflow flex justify-center">
         <div className="col-span-6 flex items-center justify-center">
@@ -43,18 +50,25 @@ function Navbar() {
       <div className="rounded row-container flex justify-center" hidden={!showModal}>
       <div className="modal rounded col-span-4 flex items-center justify-center bg-black" hidden={!showModal}>
       <ul>
-          {dropdownItems.map(item => (
-            <li key={item.id}>
-              <div className="link-wrapper flex justify-center items-center h-12 w-32 rounded-full bg-gray-700 hover:bg-gradient-to-r hover:from-gray-700 hover:via-gray-500 hover:to-gray-700 transform hover:-translate-y-1 hover:scale-140">
-                <Link to={item.url} className="modal-link" onClick={handleModalClose}>
-                  <span className="modal-icon"><FontAwesomeIcon icon={item.icon}/></span>
-                  <span className="bold-white">{item.label}</span>
-                </Link>
-              </div>
-            </li>
-          ))}
-        </ul>
-        </div>
+      {dropdownItems.map((item, index) => (
+      <li key={item.id}>
+        {dropdownItemsShown && (
+          <div
+            className="link-wrapper flex justify-center items-center h-12 w-32 rounded-full bg-gray-700 hover:bg-gradient-to-r hover:from-gray-700 hover:via-gray-500 hover:to-gray-700 transform hover:-translate-y-1 hover:scale-140"
+            style={{ transitionDelay: `${index * 100}ms` }}
+          >
+            <Link to={item.url} className="modal-link" onClick={handleModalClose}>
+              <span className="modal-icon">
+                <FontAwesomeIcon icon={item.icon} />
+              </span>
+              <span className="bold-white">{item.label}</span>
+            </Link>
+          </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
       </div>
     </nav>
   );
