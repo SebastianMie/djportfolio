@@ -3,10 +3,12 @@ module.exports = {
     purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
     darkMode: false,
     theme: {
-      extend: {},
+      extend: {
+        typography: {},
+      },
     },
     variants: {
       extend: {},
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/typography")],
   };

@@ -109,9 +109,8 @@ body {
 
   /* Buttons*/
   .button-dropdown {
-    margin: 0.5rem;
-    width: 115px;
-    text-align: right;
+    width: 20px;
+    text-align: center;
     cursor: pointer;
   }
 
@@ -142,16 +141,35 @@ body {
   }
 
   .modal-icon {
-    padding: 0.4rem;
-    height: 40px;
-    width: 40px;
+    padding: 0.25rem;
+    color: white;
+    height: 25x;
+    width: 25px;
   }
  
   .modal {
     margin-top: 5px;
-    z-index: 9999; /* hoher Wert, um es immer über anderen Elementen zu positionieren */
     width: 125px;
     height: 95px;
+  }
+
+  .link-wrapper {
+    background-color: black;
+    transition: background-color 0.5s ease;
+  }
+
+  .link-wrapper:hover {
+    background-color: rgb(120, 118, 118);
+    transform: translateX(5px);
+  }
+
+  .modal-link {
+    background-color: black;
+    transition: background-color 0.5s ease;
+  }
+  
+  .modal-link:hover {
+    background-color: rgb(120, 118, 118);
   }
 
   .margin-left {

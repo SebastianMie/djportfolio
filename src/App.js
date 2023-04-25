@@ -9,15 +9,19 @@ import './styles.css';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/informations" element={<Informations />} />
-          <Route path="/genres" element={<Genres />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-    </Router>
+    <div className="bg-gray-100">
+      <Router>
+        <Navbar />
+        <div className="container mx-auto">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/informations" element={<Informations />} />
+            <Route path="/genres" element={<Genres />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
   );
 }
 
