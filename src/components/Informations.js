@@ -5,13 +5,13 @@ function Informations() {
   return (
     <div className="home-outer top-to-bottom-colorflow">
       <div className="row-container-center flex sm:flex-col md:flex-row">
-        <div className="col-span-12 md:col-span-6 flex">
+        <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 flex">
           <div className="home-picture-container">
             <img className="picture-home" src={djalps5} alt="djalps5" />
           </div>
         </div>
-        <div className="sm:col-span-12 md:col-span-6 items-center">
-          <div className="home-text-container">
+        <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 items-center">
+         <div className="home-picture-container">
             <h1 className="large-bold-white">Informationen</h1>
             <p className="bold-white">
               Mein Traum ist es, meine lebenslange Leidenschaft,
@@ -26,7 +26,7 @@ function Informations() {
               <br />
               Falls du fragen zu meiner Person oder meinen Leistungen hast melde dich gerne bei mir.
             </p>
-          </div>
+            </div> 
         </div> 
       </div>
     </div>
