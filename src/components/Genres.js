@@ -1,32 +1,140 @@
 import React from "react";
 import djalpshome from '../assets/pictures/tatto_drip.png';
+import { useState, useEffect } from 'react';
+import { useSpring, animated, useTrail } from 'react-spring';
+
 
 function Genres() {
+  const [showImage, setShowImage] = useState(false);
+  const [currentText, setCurrentText] = useState(' ');
+  const [showSecondText, setShowSecondText] = useState(false);
+  const [showText, setShowText] = useState(true);
+
+  var text1 = ' ';
+  const text2 = 'GGenres';
+
+  const contacts = [
+    {
+      id: 1,
+      genre: 'DnB',
+      bpm: '170-180 BPM',
+      beschreibung: 'Charakteristischer Drum und Bass Rythmus'
+    },
+    {
+      id: 2,
+      genre: 'Harderstyles',
+      bpm: '150-200+ BPM',
+      beschreibung: 'Charakteristische Bass Kicks und melodische Elemente'
+    },
+    {
+      id: 3,
+      genre: 'Hardtekk',
+      bpm: '170-190 BPM',
+      beschreibung: 'Charakteristische kürzere Techno Bass Kicks und melodische Elemente'
+    },
+    {
+      id: 4,
+      genre: 'Psytrance',
+      bpm: '130-170 BPM',
+      beschreibung: 'Charakteristische Psytrance Bass Kicks und melodische Elemente'
+    },
+    {
+      id: 5,
+      genre: 'Techno',
+      bpm: '130-160 BPM',
+      beschreibung: 'Charakteristische Bass Kicks'
+    }
+  ];
+
+  const trail = useTrail(contacts.length, {
+    from: { opacity: 0, transform: 'translateX(-150px)' },
+    to: { opacity: 1, transform: 'translateX(0px)' },
+    delay: 500,
+    config: { duration: 1200 }
+  });
+
+  const imageAnimation = useSpring({
+    to: { opacity: 1, transform: 'translateX(0px)' },
+    from: { opacity: 0, transform: 'translateX(+150px)' },
+    delay: 500,
+    config: { duration: 1200 }
+  });
+
+  const textAnimation = useSpring({
+    to: { opacity: 1, transform: 'translateX(0)' },
+    from: { opacity: 0, transform: 'translateX(-150px)' },
+    delay: 500,
+    config: { duration: 1200 }
+  });
+
+  useEffect(() => {
+    animateText(text1, text2);
+  }, [text1]);
+
+  const animateText = (text1, text2) => {
+    let i = 0;
+    const interval = setInterval(() => {
+      console.log(text1);
+      i++;
+      if ( i === text1.length) {
+        clearInterval(interval);
+          setShowSecondText(true);
+          setShowText(false);
+      }
+    }, 500);
+    return () => clearInterval(interval);
+  };
+
+  useEffect(() => {
+    if (showSecondText) {
+      setCurrentText('');
+      let j = 0;
+      const interval = setInterval(() => {
+        setCurrentText((text) => text + text2[j]);
+        j++;
+        if (j === text2.length - 1) {
+          clearInterval(interval);
+        }
+      }, 500);
+    }
+  }, [showSecondText]);
+
   return (
-    <div className="home-outer top-to-bottom-colorflow">
+    <div className="home-vh" id="genres">
     <div className="row-container-center flex sm:flex-col md:flex-row">
-    <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 flex">
-    <div className="home-picture-container">
-      <img className="picture-home" src={djalpshome} alt="djalpshome" />
-    </div>
-    </div>
     <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 items-center">
     <div className="home-picture-container">
-    <h1 className="large-bold-white">Meine fav. Musikgenres</h1>
-    <br></br>
-      <ul className="bold-white">
-        <li><h1>DnB</h1> 170-180 BPM</li><li>Charakteristischer Drum und Bass Rythmnus</li>
-        <br></br>
-        <li><h1>Harderstyles</h1> 150-200+ BPM</li><li>Charakteristische Bass Kicks und melodische Elemente</li>
-        <br></br>
-        <li><h1>Hardtekk</h1> 170-190 BPM</li><li>Charakteristische kürzere Techno Bass Kicks und melodische Elemente</li>
-        <br></br>
-        <li><h1>Psytrance</h1> 130-170 BPM</li><li>Charakteristische Psytrance Bass Kicks und melodische Elemente</li>
-        <br></br>
-        <li><h1>Techno</h1> 130-160 BPM</li><li>Charakteristische Bass Kicks</li>
-      </ul>
+    <animated.div style={textAnimation}>
+              <div className="large-bold-white animated-text">
+                <span className="blink">{currentText}</span>
+              </div>
+            </animated.div>
+        <ul>
+          {trail.map((animation, index) => (
+          <animated.li key={contacts[index].id} style={animation}>
+          <div className="card">
+          <h1 className="white">{contacts[index].genre}</h1>
+          <h1 className="white">{contacts[index].bpm}</h1>
+          <h1 className="white">{contacts[index].beschreibung}</h1>
+          </div>
+          </animated.li>
+        ))}
+        </ul>
     </div>
     </div> 
+    <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 flex">
+    <animated.div style={imageAnimation}>
+        <div className="picture-home rounded-full overflow-hidden">
+            <img
+                className="picture-home object-cover"
+                src={djalpshome}
+                alt="djalpshome"
+                onLoad={() => setShowImage(true)}
+                style={{ opacity: showImage ? 1 : 0 }}
+              />
+        </div>
+    </animated.div>
+    </div>
   </div>
   </div>
   );

@@ -1,44 +1,33 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { faAngleDown, faInfoCircle, faMusic, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo2 from '../assets/logos/logo_black1.png';
+import { Link } from 'react-scroll';
 
 function Navbar() {
-  let [showModal, setShowModal] = useState(false);
-let [dropdownItemsShown, setDropdownItemsShown] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-const handleModalOpen = () => {
-  setShowModal(!showModal);
+  const handleModalOpen = () => {
+    setShowModal(!showModal);
+  };
 
-  // Rufe die Dropdown-Elemente verzögert auf
-  setTimeout(() => {
-    setDropdownItemsShown(true);
-  }, 100);
-};
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
 
-const handleModalClose = () => {
-  setShowModal(false);
-  setDropdownItemsShown(false);
-};
-
-const dropdownItems = [
-  { id: 1, label: 'Information', url: '/informations', component: 'Informations', icon: faInfoCircle },
-  { id: 2, label: 'Genres', url: '/genres', component: 'Genres', icon: faMusic },
-  { id: 3, label: 'Kontakt', url: '/contact', component: 'Contact', icon: faEnvelope },
-];
-
-return (
+  return (
     <nav className="navbar h-40 rounded-lg">
-      <div className="row-container diagonal-colorflow flex justify-center">
+      <div className="row-container justify-center">
         <div className="col-span-6 flex items-center justify-center">
-          <Link to="/">
-            <img className="logo-standard" src={logo2} alt="logo2" />
-          </Link>
-        </div>
-        <div className="col-span-5 flex items-center justify-center">
-          <Link to="/">
-            <span className="large-bold-white">UNTIL DJ</span>
+          <Link
+                to="home"
+                smooth="true"
+                duration={500}
+                offset={-60}
+                className="modal-link"
+                onClick={handleModalClose}
+              >
+                <img className="logo-standard" src={logo2} alt="logo2" />
           </Link>
         </div>
         <div className="col-span-1 flex items-center justify-center">
@@ -48,27 +37,55 @@ return (
         </div>
       </div>
       <div className="rounded row-container flex justify-center" hidden={!showModal}>
-      <div className="modal rounded col-span-4 flex items-center justify-center bg-black" hidden={!showModal}>
-      <ul>
-      {dropdownItems.map((item, index) => (
-      <li key={item.id}>
-        {dropdownItemsShown && (
-          <div
-            className="link-wrapper flex justify-center items-center h-12 w-32 rounded-full bg-gray-700 hover:bg-gradient-to-r hover:from-gray-700 hover:via-gray-500 hover:to-gray-700 transform hover:-translate-y-1 hover:scale-140"
-            style={{ transitionDelay: `${index * 100}ms` }}
-          >
-            <Link to={item.url} className="modal-link" onClick={handleModalClose}>
-              <span className="modal-icon">
-                <FontAwesomeIcon icon={item.icon} />
-              </span>
-              <span className="bold-white">{item.label}</span>
-            </Link>
-          </div>
-          )}
-        </li>
-      ))}
-    </ul>
-  </div>
+        <div className="modal rounded col-span-4 flex items-center justify-center bg-black" hidden={!showModal}>
+          <ul>
+            <li>
+              <Link
+                to="information"
+                smooth="true"
+                duration={500}
+                offset={-60}
+                className="modal-link"
+                onClick={handleModalClose}
+              >
+                <span className="modal-icon">
+                  <FontAwesomeIcon icon={faInfoCircle} />
+                </span>
+                <span className="bold-white">Information</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="genres"
+                smooth="true"
+                duration={500}
+                offset={-60}
+                className="modal-link"
+                onClick={handleModalClose}
+              >
+                <span className="modal-icon">
+                  <FontAwesomeIcon icon={faMusic} />
+                </span>
+                <span className="bold-white">Genres</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="contact"
+                smooth="true"
+                duration={500}
+                offset={-60}
+                className="modal-link"
+                onClick={handleModalClose}
+              >
+                <span className="modal-icon">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </span>
+                <span className="bold-white">Kontakt</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

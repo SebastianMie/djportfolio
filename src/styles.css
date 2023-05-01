@@ -9,11 +9,16 @@ body {
   /* Set dark grey background for the navbar */
 .navbar {
     background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 .home-outer {
     background-color: #000000;
-    padding: 1rem;
+    margin-top: 70px;
 }
 
 
@@ -21,6 +26,11 @@ body {
 /* Bold white text */
 .bold-white {
     font-weight: bold;
+    color: #ffffff;
+  }
+
+  .white {
+    font-size: 13pt;
     color: #ffffff;
   }
   
@@ -70,7 +80,7 @@ body {
 
   .row-container-center {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     padding: 1rem;
     width: 100%;
@@ -84,6 +94,10 @@ body {
     width: 100%;
     height: 100%;
     align-items: top;
+  }
+
+  .home-vh {
+    height: 100vh;
   }
 
   .home-text-container {
@@ -107,12 +121,109 @@ body {
     border-radius: 1rem;
   }
 
+  .card {
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translate(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  }
+  
   /* Buttons*/
   .button-dropdown {
     width: 20px;
     margin-left: 90px;
     text-align: center;
     cursor: pointer;
+  }
+
+  .animated-button {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+  }
+  
+  .animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  .animated-button-fill {
+    overflow: hidden;
+    text-align: left;
+    display: inline-block;
+    margin-right: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+  }
+  
+  .animated-button-fill::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #fff;
+    opacity: 0.5;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.8s ease-out, height 0.8s ease-out;
+  }
+  
+  .animated-button-fill:hover::before {
+    width: 200%;
+    height: 200%;
+  }
+  
+.blink {
+  border-right: 2px solid hsl(0, 0%, 100%);
+  animation: blinkTextCursor 1000ms infinite;;
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: hsl(0, 0%, 100%);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+  
+  .animated-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animated-button:hover::before {
+    transform: scaleX(1.5);
   }
 
   .picture-standard {
@@ -126,14 +237,15 @@ body {
   }
 
   .picture-home {
-    padding: 0.25rem;
-    min-height: 70%;
-    max-height: 100%;
-    min-height: 80%;
-    max-width: 100%;
-    border-radius: 1rem;
+    padding-left: 0.4rem;
+    max-height: 500px;
+    max-width: 300px;
     display: flex;
     align-self: center;
+  }
+
+  .rounded-full {
+    border-radius: 100rem;
   }
 
   .logo-standard {
@@ -172,7 +284,7 @@ body {
   }
   
   .modal-link:hover {
-    background-color: rgb(120, 118, 118);
+    background-color: #9eb1b1;
   }
 
   .margin-left {
@@ -183,23 +295,16 @@ body {
     border-radius: 0.5rem;
   }
   
-  /* Farbverlauf von links nach rechts für eine CSS-Klasse */
-  .colorflow {
-    background: linear-gradient(to left, #9eb1b1, #000000);
-  }
 
-  .colorflow1 {
-    background: linear-gradient(to right, #9eb1b1, #000000);
-  }
 
   .diagonal-colorflow {
     background: linear-gradient(to bottom right, #000000, #9eb1b1);
   }
 
   .top-to-bottom-colorflow {
-    background: linear-gradient(#000000, #9eb1b1);
+    background: linear-gradient(#000000, #acacac);
   }
 
   .bottom-to-top-colorflow {
-    background: linear-gradient(#9eb1b1, #000000);
+    background: linear-gradient(#74ffff, #000000);
   }

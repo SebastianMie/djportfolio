@@ -6,19 +6,47 @@ import Genres from './components/Genres';
 import Informations from './components/Informations';
 import Contact from './components/Contact';
 import './styles.css';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
 
 function App() {
+  const [activeLink, setActiveLink] = useState('');
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    const sections = document.querySelectorAll('section');
+    const links = document.querySelectorAll('.scroll-links a');
+    sections.forEach((section, index) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+        setActiveLink(links[index].hash);
+      }
+    });
+  };
+
   return (
-    <div className="bg-gray-100">
+    <div className="home-outer top-to-bottom-colorflow">
       <Router>
-        <Navbar />
-        <div className="container mx-auto">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/informations" element={<Informations />} />
-            <Route path="/genres" element={<Genres />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+        <div className="grid-container" style={{ gridTemplateRows: 'auto' }}>
+          <Navbar />
+          <div className="container mx-auto">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/informations" element={<Informations />} />
+              <Route path="/genres" element={<Genres />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
+          <div className="scroll-links">
+          <Informations />
+          <Genres />
+          <Contact />
+        </div>
         </div>
       </Router>
     </div>
