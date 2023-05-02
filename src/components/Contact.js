@@ -9,6 +9,7 @@ function Contact() {
   const [currentText, setCurrentText] = useState(' ');
   const [showText, setShowText] = useState(true);
   const [showSecondText, setShowSecondText] = useState(false);
+  const [blink, setBlink] = useState(false);
   
   var text1 = ' ';
   const text2 = 'KKontakt';
@@ -63,45 +64,53 @@ function Contact() {
   });
 
   useEffect(() => {
-    animateText(text1, text2);
-  }, [text1]);
+    const timeout = setTimeout(() => {
+      animateText(text1, text2);
+    }, 1500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
 
   const animateText = (text1, text2) => {
     let i = 0;
+    setBlink(true);
     const interval = setInterval(() => {
       console.log(text1);
       i++;
       if ( i === text1.length) {
         clearInterval(interval);
-          setShowSecondText(true);
-          setShowText(false);
+        animateText2(text2);
+        setShowText(false);
       }
     }, 500);
     return () => clearInterval(interval);
   };
 
-  useEffect(() => {
-    if (showSecondText) {
+  const animateText2 = (text2) => {
+   {
       setCurrentText('');
       let j = 0;
       const interval = setInterval(() => {
         setCurrentText((text) => text + text2[j]);
         j++;
         if (j === text2.length - 1) {
+          setBlink(false);
           clearInterval(interval);
         }
       }, 500);
     }
-  }, [showSecondText]);
+  };
+  
   return (
     <div className="home-vh" id="contact">
       <div className="row-container-center flex sm:flex-col md:flex-row">
         <div className="sm:col-span-6 md:col-span-6 lg:col-span-12">
-        
             <div className="home-picture-container">
             <animated.div style={textAnimation}>
               <div className="large-bold-white animated-text">
-                <span className="blink">{currentText}</span>
+                <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>{currentText}</span>
               </div>
             </animated.div>
               <ul>

@@ -7,17 +7,10 @@ import { useSpring, animated } from 'react-spring';
 function Home() {
   const [showImage, setShowImage] = useState(false);
   const [currentText, setCurrentText] = useState(' ');
-  const [showText, setShowText] = useState(true);
-  const [showSecondText, setShowSecondText] = useState(false);
   const [blink, setBlink] = useState(false);
-
   
   var text1 = ' ';
   const text2 = 'UUNTIL';
-
-  const toggleBlink = () => {
-    setBlink(!blink);
-  }
 
   const imageAnimation = useSpring({
     to: { opacity: 1, transform: 'translateX(0px)' },
@@ -58,7 +51,6 @@ function Home() {
       if ( i === text1.length) {
         clearInterval(interval);
         animateText2(text2);
-        setShowText(false);
       }
     }, 500);
     return () => clearInterval(interval);
@@ -81,13 +73,12 @@ function Home() {
 
   return (
     <div className="home-vh" id="home">
-      <div className="row-container-center flex sm:flex-col md:flex-row">
+      <div className="scroll-container mx-auto row-container-center flex sm:flex-col md:flex-row">
         <div className="sm:col-span-6 md:col-span-6 lg:col-span-12">
-          
           <animated.div style={textAnimation}>
             <div className="home-picture-container">
               <div className="large-bold-white animated-text">
-                <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'black'}`} }>I AM {currentText}</span>
+                <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>I AM {currentText}</span>
               </div>
               <div className="mt-8">
               <Link
