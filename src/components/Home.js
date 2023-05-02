@@ -9,9 +9,15 @@ function Home() {
   const [currentText, setCurrentText] = useState(' ');
   const [showText, setShowText] = useState(true);
   const [showSecondText, setShowSecondText] = useState(false);
+  const [blink, setBlink] = useState(false);
+
   
   var text1 = ' ';
   const text2 = 'UUNTIL';
+
+  const toggleBlink = () => {
+    setBlink(!blink);
+  }
 
   const imageAnimation = useSpring({
     to: { opacity: 1, transform: 'translateX(0px)' },
@@ -24,7 +30,7 @@ function Home() {
     to: { opacity: 1, transform: 'translateX(0)' },
     from: { opacity: 0, transform: 'translateX(-150px)' },
     delay: 500,
-    config: { duration: 1000 }
+    config: { duration: 1200 }
   });
 
   const buttonAnimation = useSpring({
@@ -34,37 +40,44 @@ function Home() {
   });
 
   useEffect(() => {
-    animateText(text1, text2);
-  }, [text1]);
+    const timeout = setTimeout(() => {
+      animateText(text1, text2);
+    }, 1500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
 
   const animateText = (text1, text2) => {
     let i = 0;
+    setBlink(true);
     const interval = setInterval(() => {
       console.log(text1);
       i++;
       if ( i === text1.length) {
         clearInterval(interval);
-          setShowSecondText(true);
-          setShowText(false);
-       
+        animateText2(text2);
+        setShowText(false);
       }
     }, 500);
     return () => clearInterval(interval);
   };
 
-  useEffect(() => {
-    if (showSecondText) {
+  const animateText2 = (text2) => {
+   {
       setCurrentText('');
       let j = 0;
       const interval = setInterval(() => {
         setCurrentText((text) => text + text2[j]);
         j++;
         if (j === text2.length - 1) {
+          setBlink(false);
           clearInterval(interval);
         }
       }, 500);
     }
-  }, [showSecondText]);
+  };
 
   return (
     <div className="home-vh" id="home">
@@ -74,14 +87,14 @@ function Home() {
           <animated.div style={textAnimation}>
             <div className="home-picture-container">
               <div className="large-bold-white animated-text">
-                <span className="blink">I AM {currentText}</span>
+                <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'black'}`} }>I AM {currentText}</span>
               </div>
               <div className="mt-8">
               <Link
                 to="contact"
                 smooth="true"
                 duration={500}
-                offset={-60}
+                offset={-50}
               >
                 <animated.button
                   style={buttonAnimation}

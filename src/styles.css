@@ -203,8 +203,7 @@ body {
   }
   
 .blink {
-  border-right: 2px solid hsl(0, 0%, 100%);
-  animation: blinkTextCursor 1000ms infinite;;
+  animation: blinkTextCursor 1000ms step-end;
 }
 
 @keyframes blinkTextCursor {
@@ -237,7 +236,7 @@ body {
   }
 
   .picture-home {
-    padding-left: 0.4rem;
+    padding: 0.4rem;
     max-height: 500px;
     max-width: 300px;
     display: flex;
