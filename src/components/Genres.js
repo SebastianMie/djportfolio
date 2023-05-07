@@ -28,18 +28,12 @@ function Genres() {
     },
     {
       id: 3,
-      genre: 'Hardtekk',
-      bpm: '170-190 BPM',
-      beschreibung: 'Charakteristische kürzere Techno Bass Kicks und melodische Elemente'
-    },
-    {
-      id: 4,
       genre: 'Psytrance',
       bpm: '130-170 BPM',
       beschreibung: 'Charakteristische Psytrance Bass Kicks und melodische Elemente'
     },
     {
-      id: 5,
+      id: 4,
       genre: 'Techno',
       bpm: '130-160 BPM',
       beschreibung: 'Charakteristische Bass Kicks'
@@ -109,7 +103,7 @@ function Genres() {
 
   return (
     <div className="home-vh" id="genres">
-    <div className="row-container-center flex sm:flex-col md:flex-row">
+    <div className="row-container-center align-items-center justify-content-center">
     <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 items-center">
     <div className="home-picture-container">
     <animated.div style={textAnimation}>
@@ -130,17 +124,15 @@ function Genres() {
         </ul>
     </div>
     </div> 
-    <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 flex">
-    <animated.div style={imageAnimation}>
-        <div className="picture-home rounded-full overflow-hidden">
+    <div className="sm:col-span-12 md:col-span-12 lg:col-span-12 flex">
+    <animated.div className="row-container-center" style={imageAnimation}>
             <img
-                className="picture-home object-cover"
+                className="picture-home"
                 src={djalpshome}
                 alt="djalpshome"
                 onLoad={() => setShowImage(true)}
                 style={{ opacity: showImage ? 1 : 0 }}
               />
-        </div>
     </animated.div>
     </div>
   </div>

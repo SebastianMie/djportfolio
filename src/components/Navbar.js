@@ -23,7 +23,7 @@ function Navbar() {
                 to="home"
                 smooth="true"
                 duration={500}
-                offset={-60}
+                offset={-70}
                 className="modal-link"
                 onClick={handleModalClose}
               >

@@ -66,10 +66,9 @@ function Informations() {
   };
   return (
     <div className="home-vh" id="information">
-     <div className="scroll-container mx-auto row-container-center flex sm:flex-col md:flex-row">
-        <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 items-center">
-        <animated.div style={textAnimation}>
-            <div className="home-picture-container">
+     <div className="row-container-center flex-column align-items-center justify-content-center">
+        <animated.div className="row-container-center" style={textAnimation}>
+            <div className="picture-home1">
             <div className="large-bold-white animated-text">
                 <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>{currentText}</span>
               </div>
@@ -79,21 +78,15 @@ function Informations() {
               <br />
               elektronische Musik mit anderen zu teilen und zu fühlen.
               </p>
-              <br />
               <p className="bold-white">
               Ich konnte bereits bei einigen privaten Events, Partys und Jobs meine Fähigkeiten als DJ verbessern.
-              <br />
               Am liebsten lege ich melodische elektronische Musik auf, bin allerdings flexibel.
-              <br />
               Melde dich gerne bei mir.
               </p>
               </div>
             </div>
           </animated.div>
-        </div>
-        <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 flex">
-          <animated.div style={imageAnimation}>
-            <div className="picture-home rounded-full overflow-hidden">
+          <animated.div className="my-12 row-container-center" style={imageAnimation}>
               <img
                 className="picture-home object-cover"
                 src={djalps5}
@@ -101,9 +94,7 @@ function Informations() {
                 onLoad={() => setShowImage(true)}
                 style={{ opacity: showImage ? 1 : 0 }}
               />
-            </div>
         </animated.div>
-        </div> 
       </div>
     </div>
   );

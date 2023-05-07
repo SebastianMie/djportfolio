@@ -127,17 +127,15 @@ function Contact() {
       </ul>
       </div>   
     </div>
-    <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 flex">
-          <animated.div style={imageAnimation}>
-            <div className="picture-home rounded-full overflow-hidden">
+    <div className="sm:col-span-12 md:col-span-12 lg:col-span-12 flex">
+          <animated.div className="row-container-center" style={imageAnimation}>
               <img
-                className="picture-home object-cover"
+                className="picture-home"
                 src={tunnel_1}
                 alt="tunnel_1"
                 onLoad={() => setShowImage(true)}
                 style={{ opacity: showImage ? 1 : 0 }}
               />
-            </div>
           </animated.div>
         </div>
   </div>

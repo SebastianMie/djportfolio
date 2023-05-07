@@ -73,56 +73,53 @@ function Home() {
 
   return (
     <div className="home-vh" id="home">
-      <div className="scroll-container mx-auto row-container-center flex sm:flex-col md:flex-row">
-        <div className="sm:col-span-6 md:col-span-6 lg:col-span-12">
-          <animated.div style={textAnimation}>
-            <div className="home-picture-container">
-              <div className="large-bold-white animated-text">
-                <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>I AM {currentText}</span>
-              </div>
-              <div className="mt-8">
-              <Link
-                to="contact"
-                smooth="true"
-                duration={500}
-                offset={-50}
+      <div className="row-container-center flex-column align-items-center justify-content-center">
+        <animated.div className="row-container-center" style={textAnimation}>
+          <div className="picture-home1">
+            <div className="xlarge-bold-white animated-text">
+              <span
+                className="blink"
+                style={{
+                  borderRight: `2px solid ${
+                    blink ? "white" : "transparent"
+                  }`,
+                }}
               >
+                I AM {currentText}
+              </span>
+            </div>
+            <div className="row-container mt-8">
+              <Link to="information" smooth="true" duration={500} offset={-70}>
+                <animated.button
+                  style={buttonAnimation}
+                  className="animated-button-fill mr-10"
+                >
+                  <span className="large-bold-white">Info</span>
+                </animated.button>
+              </Link>
+              <Link to="contact" smooth="true" duration={500} offset={-70}>
                 <animated.button
                   style={buttonAnimation}
                   className="animated-button-fill"
-                ><span className="bold-white">Kontakt</span></animated.button>
+                >
+                  <span className="large-bold-white">Kontakt</span>
+                </animated.button>
               </Link>
-              <Link
-                to="information"
-                smooth="true"
-                duration={500}
-                offset={-60}
-              >
-                <animated.button
-                  style={buttonAnimation}
-                  className="animated-button-fill"
-                ><span className="bold-white">Infos</span></animated.button>
-              </Link>
-              </div>
             </div>
+          </div>
+        </animated.div>
+          <animated.div className="my-12 row-container-center" style={imageAnimation}>
+            <img
+              className="picture-home"
+              src={djalpshome}
+              alt="djalpshome"
+              onLoad={() => setShowImage(true)}
+              style={{ opacity: showImage ? 1 : 0 }}
+            />
           </animated.div>
-        </div>
-        <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 flex">
-          <animated.div style={imageAnimation}>
-            <div className="picture-home rounded-full overflow-hidden">
-              <img
-                className="picture-home object-cover"
-                src={djalpshome}
-                alt="djalpshome"
-                onLoad={() => setShowImage(true)}
-                style={{ opacity: showImage ? 1 : 0 }}
-              />
-            </div>
-          </animated.div>
-        </div>
       </div>
     </div>
-  );
+  );  
 }
 
 export default Home;
