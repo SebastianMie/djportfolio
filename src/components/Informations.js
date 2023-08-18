@@ -74,14 +74,12 @@ function Informations() {
               </div>
               <div className="home-picture-container">
               <p className="bold-white">
-              Mein Traum ist es, meine lebenslange Leidenschaft,
-              <br />
-              elektronische Musik mit anderen zu teilen und zu fühlen.
+              Seit 2 Jahren lege auf verschiedenen Events auf.
               </p>
               <p className="bold-white">
-              Ich konnte bereits bei einigen privaten Events, Partys und Jobs meine Fähigkeiten als DJ verbessern.
-              Am liebsten lege ich melodische elektronische Musik auf, bin allerdings flexibel.
-              Melde dich gerne bei mir.
+              In den Genres Techno und Hard Dance fühle ich mich am wohlsten.
+              Seit kurzem habe ich auch angefagnen Musik sleber zu produzieren. 
+              Ich spiele verschiedenste Genres zu verschiedenen Anlässen, also Melde dich gerne bei mir.
               </p>
               </div>
             </div>
