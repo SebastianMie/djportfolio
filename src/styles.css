@@ -21,6 +21,37 @@ body {
     margin-top: 70px;
 }
 
+/* Stile für den Footer */
+.footer {
+  @apply bg-black text-white p-4;
+}
+
+.footer-links {
+  @apply flex justify-center;
+}
+
+.footer-link {
+  @apply mx-4 cursor-pointer;
+}
+
+/* Stile für das animierte Zahnrad */
+.animate-rotate {
+  animation: rotate 2s linear infinite; /* Passe die Dauer oder andere Eigenschaften nach Bedarf an */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.center-icon {
+  @apply flex justify-center items-center;
+}
+
 
 /* Font Styles */
 /* Bold white text */
@@ -75,6 +106,16 @@ body {
     width: 100%;
     height: 100%;
     align-items: center;
+  }
+
+  .row-container-center1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    gap: 10px;
   }
 
   .row-container-center {
@@ -132,6 +173,17 @@ body {
   }
   
   /* Buttons*/
+
+  .btn-submit {
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+    margin-top: 15px;
+  }
+
   .button-dropdown {
     width: 20px;
     margin-left: 90px;
@@ -308,4 +360,18 @@ body {
   .scroll-container {
     scroll-snap-type: y mandatory;
     scroll-padding-top: 60px; /* adjust this to your navbar height */
+  }
+
+  .form-label {
+    margin-right: 15px;
+    margin-top: 15px;
+  }
+
+  .form-area {
+    height: 130px;
+    margin-top: 15px;
+  }
+
+  .form-control {
+    margin-top: 15px;
   }

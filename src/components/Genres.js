@@ -17,26 +17,22 @@ function Genres() {
     {
       id: 1,
       genre: 'DnB',
-      bpm: '170-180 BPM',
-      beschreibung: 'Charakteristischer Drum und Bass Rythmus'
+      bpm: '170-180 BPM'
     },
     {
       id: 2,
       genre: 'Harderstyles',
-      bpm: '150-200+ BPM',
-      beschreibung: 'Charakteristische Bass Kicks und melodische Elemente'
+      bpm: '150-200+ BPM'
     },
     {
       id: 3,
       genre: 'Psytrance',
       bpm: '130-170 BPM',
-      beschreibung: 'Charakteristische Psytrance Bass Kicks und melodische Elemente'
     },
     {
       id: 4,
       genre: 'Techno',
       bpm: '130-160 BPM',
-      beschreibung: 'Charakteristische Bass Kicks'
     }
   ];
 
@@ -117,7 +113,6 @@ function Genres() {
           <div className="card">
           <h1 className="white">{contacts[index].genre}</h1>
           <h1 className="white">{contacts[index].bpm}</h1>
-          <h1 className="white">{contacts[index].beschreibung}</h1>
           </div>
           </animated.li>
         ))}

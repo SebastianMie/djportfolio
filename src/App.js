@@ -4,10 +4,11 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Genres from './components/Genres';
 import Informations from './components/Informations';
-import Contact from './components/Contact';
+import Contact from './components/Contact'; 
 import './styles.css';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import Footer from './components/Footer';
+
 
 function App() {
   const [activeLink, setActiveLink] = useState('');
@@ -46,6 +47,7 @@ function App() {
           <Informations />
           <Genres />
           <Contact />
+          <Footer />
         </div>
         </div>
       </Router>

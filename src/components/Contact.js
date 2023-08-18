@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import tunnel_1 from '../assets/pictures/tunnel_2.PNG';
 import { useSpring, animated, useTrail } from 'react-spring';
+import ContactForm from './ContactForm';
 
 function Contact() {
 
@@ -17,27 +18,27 @@ function Contact() {
   const contacts = [
     {
       id: 1,
-      title: 'Mail:',
+      title: 'Mail',
       url: 'until.booking@gmail.com'
     },
     {
       id: 2,
-      title: 'Instagram:',
+      title: 'Instagram',
       url: 'https://www.instagram.com/until.dj/'
     },
     {
       id: 3,
-      title: 'Soundcloud:',
+      title: 'Soundcloud',
       url: 'https://soundcloud.com/untildj'
     },
     {
       id: 4,
-      title: 'TikTok:',
+      title: 'TikTok',
       url: 'https://www.tiktok.com/@until.dj'
     },
     {
       id: 5,
-      title: 'Youtube:',
+      title: 'Youtube',
       url: 'https://youtube.com/@UNTIL_DJ'
     }
   ];
@@ -119,7 +120,6 @@ function Contact() {
                 <div className="card">
                 <a href={contacts[index].url} target="_blank" rel="noopener noreferrer">
                 <h1 className="white">{contacts[index].title}</h1>
-                <span className="white">{contacts[index].url}</span>
               </a>
                 </div>
           </animated.li>
@@ -129,16 +129,13 @@ function Contact() {
     </div>
     <div className="sm:col-span-12 md:col-span-12 lg:col-span-12 flex">
           <animated.div className="row-container-center" style={imageAnimation}>
-              <img
-                className="picture-home"
-                src={tunnel_1}
-                alt="tunnel_1"
-                onLoad={() => setShowImage(true)}
-                style={{ opacity: showImage ? 1 : 0 }}
-              />
+          <div className="home-picture-container">
+          <ContactForm />
+          </div>
           </animated.div>
         </div>
   </div>
+
   </div>
   );
 }
