@@ -78,7 +78,7 @@ function Informations() {
               </p>
               <p className="bold-white">
               In den Genres Techno und Hard Dance fühle ich mich am wohlsten.
-              Seit kurzem habe ich auch angefagnen Musik sleber zu produzieren. 
+              Seit kurzem habe ich auch angefagnen, Musik selber zu produzieren. 
               Ich spiele verschiedenste Genres zu verschiedenen Anlässen, also Melde dich gerne bei mir.
               </p>
               </div>
