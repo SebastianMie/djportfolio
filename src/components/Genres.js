@@ -16,23 +16,23 @@ function Genres() {
   const contacts = [
     {
       id: 1,
-      genre: 'DnB',
-      bpm: '170-180 BPM'
+      genre: 'Techno',
+      bpm: '130-160 BPM',
     },
     {
       id: 2,
-      genre: 'Harderstyles',
+      genre: 'Hard Dance',
       bpm: '150-200+ BPM'
     },
     {
       id: 3,
-      genre: 'Psytrance',
-      bpm: '130-170 BPM',
+      genre: 'DnB',
+      bpm: '170-180 BPM'
     },
     {
       id: 4,
-      genre: 'Techno',
-      bpm: '130-160 BPM',
+      genre: 'Psytrance',
+      bpm: '130-170 BPM',
     }
   ];
 
