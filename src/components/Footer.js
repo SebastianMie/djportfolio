@@ -25,10 +25,8 @@ function Footer() {
         {showInfo && (
         <div className="link-content">
           <p>
-            Name: Max Mustermann<br />
-            Adresse: Musterstraße 123, 12345 Musterstadt<br />
-            E-Mail: max.mustermann@example.com<br />
-            Telefon: 01234 56789
+            UNTIL DJ<br />
+            Name: Sebastian Mierisch<br />
           </p>
         </div>
         )}
@@ -40,7 +38,8 @@ function Footer() {
             {showPrivacy && (
               <div className="link-content">
                 <p>
-                  Wir nehmen den Schutz deiner persönlichen Daten sehr ernst. Alle Informationen dazu findest du in unserer Datenschutzerklärung.
+                  Wir nehmen den Schutz deiner persönlichen Daten sehr ernst.<br /> 
+                  Deine Daten werden ausschließlich für die Email Kontaktaufnahme verarbeitet
                 </p>
               </div>
             )}
