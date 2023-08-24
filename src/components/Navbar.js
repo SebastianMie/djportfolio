@@ -39,6 +39,21 @@ function Navbar() {
       <div className="rounded row-container flex justify-center" hidden={!showModal}>
         <div className="modal rounded col-span-4 flex items-center justify-center bg-black" hidden={!showModal}>
           <ul>
+          <li>
+              <Link
+                to="events"
+                smooth="true"
+                duration={500}
+                offset={-60}
+                className="modal-link"
+                onClick={handleModalClose}
+              >
+                <span className="modal-icon">
+                  <FontAwesomeIcon icon={faInfoCircle} />
+                </span>
+                <span className="bold-white">Events</span>
+              </Link>
+            </li>
             <li>
               <Link
                 to="information"

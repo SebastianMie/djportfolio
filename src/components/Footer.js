@@ -1,58 +1,51 @@
 import React, { useState } from 'react';
 import { FaInfoCircle, FaShieldAlt, FaCog, FaHeart } from 'react-icons/fa'; 
-import { ClockLoader } from 'react-spinners';
 
 function Footer() {
-  const [showInfo, setShowInfo] = useState(false);
-  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [popup, setPopup] = useState(null); // 'info', 'privacy', oder null
 
-  const toggleInfo = () => {
-    setShowInfo(!showInfo);
-    setShowPrivacy(false);
+  const openPopup = (type) => {
+    setPopup(type);
   };
 
-  const togglePrivacy = () => {
-    setShowPrivacy(!showPrivacy);
-    setShowInfo(false);
+  const closePopup = () => {
+    setPopup(null);
   };
 
   return (
     <footer className="footer">
       <div className="row-container">
-      <div className="row-container-center1">
-        <h3>Impressum</h3>
-        <FaInfoCircle onClick={toggleInfo} />
-        {showInfo && (
-        <div className="link-content">
-          <p>
-            UNTIL DJ<br />
-            Name: Sebastian Mierisch<br />
-          </p>
-        </div>
-        )}
+        <div className="icon-container">
+          <FaInfoCircle onClick={() => openPopup('info')} />
+          {popup === 'info' && (
+            <div className="popup">
+              <p>
+                UNTIL DJ<br />
+                Name: Sebastian Mierisch<br />
+              </p>
+              <button onClick={closePopup}>Schließen</button>
+            </div>
+          )}
         </div>
 
-        <div className="row-container-center1">
-          <h3>Datenschutzerklärung</h3>
-            <FaShieldAlt onClick={togglePrivacy} />
-            {showPrivacy && (
-              <div className="link-content">
-                <p>
-                  Wir nehmen den Schutz deiner persönlichen Daten sehr ernst.<br /> 
-                  Deine Daten werden ausschließlich für die Email Kontaktaufnahme verarbeitet
-                </p>
-              </div>
-            )}
+        <div className="icon-container">
+          <FaShieldAlt onClick={() => openPopup('privacy')} />
+          {popup === 'privacy' && (
+            <div className="popup">
+              <p>
+                Wir nehmen den Schutz deiner persönlichen Daten sehr ernst.<br /> 
+                Deine Daten werden ausschließlich für die Email Kontaktaufnahme verarbeitet
+              </p>
+              <button onClick={closePopup}>Schließen</button>
+            </div>
+          )}
         </div>
-        <div className="row-container-center1">
-          <h3>
-            Made with 
-          </h3>
-          <FaHeart className="text-black-600 mx-1" />
-          <h3>
-           and React JS 
-          </h3>
-          <FaCog className="text-blue-500 text-4xl ml-2 animate-rotate" />
+
+        <div className="icon-container">
+          <h3>Made with</h3>
+          <FaHeart className="icon" />
+          <h3>and React JS</h3>
+          <FaCog className="icon spinning" />
         </div>
       </div>
     </footer>

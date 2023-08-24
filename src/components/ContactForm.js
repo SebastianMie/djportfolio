@@ -15,7 +15,7 @@ function ContactForm() {
     };
 
     try {
-      await api.post('/send-email', formData); // Verwende die konfigurierte Axios-Instanz
+      await api.post('/api/send-email', formData); // Verwende die konfigurierte Axios-Instanz
       setFormStatus('E-Mail erfolgreich gesendet');
     } catch (error) {
       console.error(error);

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Genres from './components/Genres';
 import Informations from './components/Informations';
+import Events from './components/Events';
 import Contact from './components/Contact'; 
 import './styles.css';
 import { useState, useEffect } from 'react';
@@ -38,12 +39,14 @@ function App() {
           <div className="container mx-auto">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/events" element={<Events />} />
               <Route path="/informations" element={<Informations />} />
               <Route path="/genres" element={<Genres />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
           <div className="scroll-links">
+          <Events />  
           <Informations />
           <Genres />
           <Contact />

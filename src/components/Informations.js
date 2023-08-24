@@ -1,5 +1,4 @@
 import React from "react";
-import djalps5 from '../assets/pictures/djalps5.jpeg';
 import { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 
@@ -74,25 +73,16 @@ function Informations() {
               </div>
               <div className="home-picture-container">
               <p className="bold-white">
-              Seit 2 Jahren lege auf verschiedenen Events auf.
+              Seit 2 Jahren lege ich auf verschiedenen Events auf.
               </p>
               <p className="bold-white">
               In den Genres Techno und Hard Dance fühle ich mich am wohlsten.
-              Seit kurzem habe ich auch angefagnen, Musik selber zu produzieren. 
-              Ich spiele verschiedenste Genres zu verschiedenen Anlässen, also Melde dich gerne bei mir.
+              Seit kurzem habe ich auch angefangen, Musik selber zu produzieren. 
+              Ich spiele verschiedenste Genres zu verschiedenen Anlässen, also melde dich gerne bei mir.
               </p>
               </div>
             </div>
           </animated.div>
-          <animated.div className="my-12 row-container-center" style={imageAnimation}>
-              <img
-                className="picture-home object-cover"
-                src={djalps5}
-                alt="djalps5"
-                onLoad={() => setShowImage(true)}
-                style={{ opacity: showImage ? 1 : 0 }}
-              />
-        </animated.div>
       </div>
     </div>
   );

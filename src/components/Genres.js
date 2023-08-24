@@ -1,5 +1,4 @@
 import React from "react";
-import djalpshome from '../assets/pictures/tatto_drip.png';
 import { useState, useEffect } from 'react';
 import { useSpring, animated, useTrail } from 'react-spring';
 
@@ -106,7 +105,7 @@ function Genres() {
               <div className="large-bold-white animated-text">
                <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>{currentText}</span>
               </div>
-            </animated.div>
+    </animated.div>
         <ul>
           {trail.map((animation, index) => (
           <animated.li key={contacts[index].id} style={animation}>
@@ -118,17 +117,6 @@ function Genres() {
         ))}
         </ul>
     </div>
-    </div> 
-    <div className="sm:col-span-12 md:col-span-12 lg:col-span-12 flex">
-    <animated.div className="row-container-center" style={imageAnimation}>
-            <img
-                className="picture-home"
-                src={djalpshome}
-                alt="djalpshome"
-                onLoad={() => setShowImage(true)}
-                style={{ opacity: showImage ? 1 : 0 }}
-              />
-    </animated.div>
     </div>
   </div>
   </div>
