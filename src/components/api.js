@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-// Erstelle eine Instanz von Axios mit deiner API-URL und anderen Optionen
 const instance = axios.create({
-  baseURL: 'http://localhost:3001', // Hier die URL deines Backend-Servers eintragen
+  baseURL: 'http://untildj.site:3001',
+  withCredentials: true
 });
+
 
 export default instance;
