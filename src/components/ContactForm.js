@@ -25,7 +25,6 @@ function ContactForm() {
 
   return (
     <div className="row-container-center align-items-center justify-content-center">
-      <h2 className="large-bold-white mb-3">Kontakt Formular</h2>
       <form onSubmit={onSubmit}>
         <div className="row-container mb-3 pt-3">
           <label className="bold-white form-label" htmlFor="email">

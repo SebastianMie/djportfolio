@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { faAngleDown, faInfoCircle, faMusic, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faInfoCircle, faMusic, faEnvelope, faCompactDisc  } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo2 from '../assets/logos/logo_black1.png';
 import { Link } from 'react-scroll';
@@ -49,7 +49,7 @@ function Navbar() {
                 onClick={handleModalClose}
               >
                 <span className="modal-icon">
-                  <FontAwesomeIcon icon={faInfoCircle} />
+                  <FontAwesomeIcon icon={faCompactDisc} />
                 </span>
                 <span className="bold-white">Events</span>
               </Link>

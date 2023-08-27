@@ -64,7 +64,7 @@ function Informations() {
     }
   };
   return (
-    <div className="home-vh" id="information">
+    <div className="home1-vh" id="information">
      <div className="row-container-center flex-column align-items-center justify-content-center">
         <animated.div className="row-container-center" style={textAnimation}>
             <div className="picture-home1">

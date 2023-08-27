@@ -1,16 +1,9 @@
-import React from "react";
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSpring, animated, useTrail } from 'react-spring';
 
-
 function Genres() {
-  const [showImage, setShowImage] = useState(false);
-  const [currentText, setCurrentText] = useState(' ');
-  const [showText, setShowText] = useState(true);
-  const [blink, setBlink] = useState(false);
-
-  var text1 = ' ';
-  const text2 = 'GGenres';
+  const [currentText, setCurrentText] = useState('Genres');
+  const [blink, setBlink] = useState(true);
 
   const contacts = [
     {
@@ -38,14 +31,7 @@ function Genres() {
   const trail = useTrail(contacts.length, {
     from: { opacity: 0, transform: 'translateX(-150px)' },
     to: { opacity: 1, transform: 'translateX(0px)' },
-    delay: 500,
-    config: { duration: 1200 }
-  });
-
-  const imageAnimation = useSpring({
-    to: { opacity: 1, transform: 'translateX(0px)' },
-    from: { opacity: 0, transform: 'translateX(+150px)' },
-    delay: 500,
+    delay: 1500,
     config: { duration: 1200 }
   });
 
@@ -53,74 +39,37 @@ function Genres() {
     to: { opacity: 1, transform: 'translateX(0)' },
     from: { opacity: 0, transform: 'translateX(-150px)' },
     delay: 500,
-    config: { duration: 1200 }
+    config: { duration: 1200 },
+    onRest: () => setBlink(false)
   });
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      animateText(text1, text2);
-    }, 1500);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
-
-  const animateText = (text1, text2) => {
-    let i = 0;
-    setBlink(true);
-    const interval = setInterval(() => {
-      console.log(text1);
-      i++;
-      if ( i === text1.length) {
-        clearInterval(interval);
-        animateText2(text2);
-        setShowText(false);
-      }
-    }, 500);
-    return () => clearInterval(interval);
-  };
-
-  const animateText2 = (text2) => {
-   {
-      setCurrentText('');
-      let j = 0;
-      const interval = setInterval(() => {
-        setCurrentText((text) => text + text2[j]);
-        j++;
-        if (j === text2.length - 1) {
-          setBlink(false);
-          clearInterval(interval);
-        }
-      }, 500);
-    }
-  };
-
   return (
-    <div className="home-vh" id="genres">
-    <div className="row-container-center align-items-center justify-content-center">
-    <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 items-center">
-    <div className="home-picture-container">
-    <animated.div style={textAnimation}>
+    <div className="home1-vh" id="genres">
+      <div className="row-container-center align-items-center justify-content-center">
+        <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 items-center">
+          <div className="home-picture-container">
+            <animated.div style={textAnimation}>
               <div className="large-bold-white animated-text">
-               <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>{currentText}</span>
+                <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>{currentText}</span>
               </div>
-    </animated.div>
-        <ul>
-          {trail.map((animation, index) => (
-          <animated.li key={contacts[index].id} style={animation}>
-          <div className="card">
-          <h1 className="white">{contacts[index].genre}</h1>
-          <h1 className="white">{contacts[index].bpm}</h1>
+            </animated.div>
+            <ul>
+              {trail.map((animation, index) => (
+                <animated.li key={contacts[index].id} style={animation}>
+                  <div className="card">
+                    <h1 className="white">{contacts[index].genre}</h1>
+                    <h1 className="white">{contacts[index].bpm}</h1>
+                  </div>
+                </animated.li>
+              ))}
+            </ul>
           </div>
-          </animated.li>
-        ))}
-        </ul>
+        </div>
+      </div>
     </div>
-    </div>
-  </div>
-  </div>
   );
 }
 
 export default Genres;
+
+

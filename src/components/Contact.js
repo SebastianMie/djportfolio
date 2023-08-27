@@ -1,44 +1,41 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import tunnel_1 from '../assets/pictures/tunnel_2.PNG';
+import React, { useState, useEffect } from 'react';
 import { useSpring, animated, useTrail } from 'react-spring';
 import ContactForm from './ContactForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faSoundcloud, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 function Contact() {
 
-  const [showImage, setShowImage] = useState(false);
   const [currentText, setCurrentText] = useState(' ');
-  const [showText, setShowText] = useState(true);
-  const [showSecondText, setShowSecondText] = useState(false);
   const [blink, setBlink] = useState(false);
   
-  var text1 = ' ';
-  const text2 = 'KKontakt';
+  const text2 = 'Kontakt ';
 
   const contacts = [
     {
       id: 1,
-      title: 'Mail',
-      url: 'until.booking@gmail.com'
+      icon: faEnvelope,
+      url: 'mailto:until.booking@gmail.com'
     },
     {
       id: 2,
-      title: 'Instagram',
+      icon: faInstagram,
       url: 'https://www.instagram.com/until.dj/'
     },
     {
       id: 3,
-      title: 'Soundcloud',
+      icon: faSoundcloud,
       url: 'https://soundcloud.com/untildj'
     },
     {
       id: 4,
-      title: 'TikTok',
+      icon: faTiktok,
       url: 'https://www.tiktok.com/@until.dj'
     },
     {
       id: 5,
-      title: 'Youtube',
+      icon: faYoutube,
       url: 'https://youtube.com/@UNTIL_DJ'
     }
   ];
@@ -46,104 +43,43 @@ function Contact() {
   const trail = useTrail(contacts.length, {
     from: { opacity: 0, transform: 'translateX(-150px)' },
     to: { opacity: 1, transform: 'translateX(0px)' },
-    delay: 500,
+    delay: 1500,
     config: { duration: 1200 }
   });
 
-  const imageAnimation = useSpring({
-    to: { opacity: 1, transform: 'translateX(0px)' },
-    from: { opacity: 0, transform: 'translateX(+150px)' },
-    delay: 500,
-    config: { duration: 1200 }
-  });
-
-  const textAnimation = useSpring({
-    to: { opacity: 1, transform: 'translateX(0)' },
-    from: { opacity: 0, transform: 'translateX(-150px)' },
-    delay: 500,
-    config: { duration: 1200 }
-  });
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      animateText(text1, text2);
-    }, 1500);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
-
-  const animateText = (text1, text2) => {
-    let i = 0;
-    setBlink(true);
-    const interval = setInterval(() => {
-      console.log(text1);
-      i++;
-      if ( i === text1.length) {
-        clearInterval(interval);
-        animateText2(text2);
-        setShowText(false);
-      }
-    }, 500);
-    return () => clearInterval(interval);
-  };
-
-  const animateText2 = (text2) => {
-   {
-      setCurrentText('');
-      let j = 0;
-      const interval = setInterval(() => {
-        setCurrentText((text) => text + text2[j]);
-        j++;
-        if (j === text2.length - 1) {
-          setBlink(false);
-          clearInterval(interval);
-        }
-      }, 500);
-    }
-  };
-  
   return (
-    <div className="home-vh" id="contact">
+    <div className="home1-vh" id="contact">
       <div className="row-container-center flex sm:flex-col md:flex-row">
         <div className="sm:col-span-6 md:col-span-6 lg:col-span-12">
+          <div className="row-container-center align-items-center justify-content-center">
+            <div className="row-container">
+              <ul className="contact-list">
+                {trail.map((animation, index) => (
+                  <animated.li key={contacts[index].id} style={animation} className="contact-item bold-white">
+                    <div className="card">
+                      <a href={contacts[index].url} target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={contacts[index].icon} size="2x" />
+                      </a>
+                    </div>
+                  </animated.li>
+                ))}
+              </ul>
+            </div>
+          </div>   
+        </div>
+       
+          <animated.div className="row-container-center">
             <div className="home-picture-container">
-            <animated.div style={textAnimation}>
-              <div className="large-bold-white animated-text">
-                <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>{currentText}</span>
-              </div>
-            </animated.div>
-              <ul>
-              {trail.map((animation, index) => (
-              <animated.li key={contacts[index].id} style={animation}>
-                <div className="card">
-                <a href={contacts[index].url} target="_blank" rel="noopener noreferrer">
-                <h1 className="white">{contacts[index].title}</h1>
-              </a>
-                </div>
-          </animated.li>
-        ))}
-      </ul>
-      </div>   
-    </div>
-    <div className="sm:col-span-12 md:col-span-12 lg:col-span-12 flex">
-          <animated.div className="row-container-center" style={imageAnimation}>
-          <div className="home-picture-container">
-          <ContactForm />
-          </div>
+              <ContactForm />
+            </div>
           </animated.div>
         </div>
-  </div>
-
-  </div>
+  
+    </div>
   );
 }
 
 export default Contact;
-
-
-
 
 
 

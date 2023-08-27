@@ -146,7 +146,13 @@ body {
   }
 
   .home-vh {
-    height: 100vh;
+    height: 80vh;
+    overflow-y: auto;
+  }
+
+  .home1-vh {
+    height: 50vh;
+    overflow-y: auto;
   }
 
   .home-text-container {
@@ -383,3 +389,20 @@ body {
   .form-control {
     margin-top: 15px;
   }
+
+  .contact-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-item {
+    margin: 0 18px; /* Dies gibt jedem Kontaktsymbol einen Abstand von 15px zu beiden Seiten. Passen Sie den Wert nach Bedarf an. */
+}
+
+/* Fügen Sie dem Kontaktformular einen oberen Abstand hinzu */
+.mt-10 {
+  margin-top: 10rem; /* passen Sie diesen Wert an, um den Abstand zu erhöhen oder zu verringern */
+}

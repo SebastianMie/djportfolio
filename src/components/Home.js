@@ -69,7 +69,7 @@ function Home() {
   }, [text1, text2, animateText]);
 
   return (
-    <div className="home-vh" id="home">
+    <div className="home1-vh" id="home">
       <div className="row-container-center flex-column align-items-center justify-content-center">
         <animated.div className="row-container-center" style={textAnimation}>
           <div className="picture-home1">
@@ -86,12 +86,12 @@ function Home() {
               </span>
             </div>
             <div className="row-container mt-8">
-              <Link to="information" smooth="true" duration={500} offset={-70}>
+              <Link to="events" smooth="true" duration={500} offset={-70}>
                 <animated.button
                   style={buttonAnimation}
                   className="animated-button-fill mr-10"
                 >
-                  <span className="large-bold-white">Info</span>
+                  <span className="large-bold-white">Events</span>
                 </animated.button>
               </Link>
               <Link to="contact" smooth="true" duration={500} offset={-70}>
