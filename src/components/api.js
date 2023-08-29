@@ -10,7 +10,6 @@ if (window.location.hostname === "localhost") {
       'http://untildj.site:3001';
 }
 
-
 const instance = axios.create({
   baseURL: baseURL,
   withCredentials: true

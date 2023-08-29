@@ -44,10 +44,10 @@ function Genres() {
   });
 
   return (
-    <div className="home1-vh" id="genres">
+    <div className="home2-vh" id="genres">
       <div className="row-container-center align-items-center justify-content-center">
-        <div className="sm:col-span-6 md:col-span-6 lg:col-span-12 items-center">
-          <div className="home-picture-container">
+        
+          <div className="picture-home1">
             <animated.div style={textAnimation}>
               <div className="large-bold-white animated-text">
                 <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>{currentText}</span>
@@ -63,7 +63,6 @@ function Genres() {
                 </animated.li>
               ))}
             </ul>
-          </div>
         </div>
       </div>
     </div>

@@ -48,11 +48,16 @@ function Contact() {
   });
 
   return (
-    <div className="home1-vh" id="contact">
+    <div className="home2-vh" id="contact">
       <div className="row-container-center flex sm:flex-col md:flex-row">
         <div className="sm:col-span-6 md:col-span-6 lg:col-span-12">
           <div className="row-container-center align-items-center justify-content-center">
-            <div className="row-container">
+          <animated.div className="row-container-center" style={{ marginBottom: '1rem' }}>
+            <div className="home-picture-container">
+              <ContactForm />
+            </div>
+          </animated.div>
+            <div className="row-container" style={{ marginBottom: '1rem' }}>
               <ul className="contact-list">
                 {trail.map((animation, index) => (
                   <animated.li key={contacts[index].id} style={animation} className="contact-item bold-white">
@@ -67,14 +72,7 @@ function Contact() {
             </div>
           </div>   
         </div>
-       
-          <animated.div className="row-container-center">
-            <div className="home-picture-container">
-              <ContactForm />
-            </div>
-          </animated.div>
         </div>
-  
     </div>
   );
 }

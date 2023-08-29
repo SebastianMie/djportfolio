@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import api from "./api";
 import { useSpring, animated } from 'react-spring';
 
+import paypalLogo from "../assets/pictures/paypal-logo.png";
+
 function Events() {
   const [video, setVideo] = useState("");
   const [loading, setLoading] = useState(true);
@@ -44,34 +46,41 @@ function Events() {
   }
 
   return (
-    <div className="home-vh" id="events">
+    <div className="home-vh" id="events" style={{ marginBottom: '2rem' }}>
       <div className="row-container-center flex-column align-items-center justify-content-center">
-      <div className="picture-home1">
-        <animated.div style={{ opacity, transform, marginBottom: '2rem' }}>
-          <div className="large-bold-white blink">Events</div>
-        </animated.div>
+        <div className="picture-home1">
+          <animated.div style={{ opacity, transform, marginBottom: '1rem' }}>
+            <div className="large-bold-white blink">Events</div>
+          </animated.div>
 
-        <div className="row-container-center" style={{ marginBottom: '2rem' }}>
-          <div className="picture-home1">
-            <p className="bold-white" style={{ marginBottom: '1rem' }}>
-              Thinking Of You II
-            </p>
-            <p className="bold-white">
-              <a href="https://paypal.me/untilbooking" target="_blank" rel="noopener noreferrer"> --Paypal Ticket Link-- </a>
-            </p>
+          <div className="row-container-center" style={{ marginBottom: '2rem' }}>
+            <div className="picture-home1">
+              <p className="bold-white" style={{ marginBottom: '1rem' }}>
+                Thinking Of You II
+              </p>
+              <p className="bold-white">
+                &nbsp;Ticket 12€ 28.10.23
+                <br></br>
+                <a href="https://paypal.me/untilbooking" target="_blank" rel="noopener noreferrer" className="blue-link">
+                  <img
+                  src={paypalLogo}
+                  alt="PayPal Logo"
+                  style={{ verticalAlign: 'middle' }}
+                />
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div className="row-container-center" style={{ marginBottom: '2rem' }}>
+            <div className="picture-home1">
+              <video controls autoPlay loop muted style={{ height: '80%' }}>
+                <source src={video} type="video/mp4" />
+                Ihr Browser unterstützt das Video-Tag nicht.
+              </video>
+            </div>
           </div>
         </div>
-
-        <div className="row-container-center" style={{ marginBottom: '2rem' }}>
-          <div className="picture-home1">
-            <video controls autoPlay loop muted style={{ maxWidth: '100%' }}>
-              <source src={video} type="video/mp4" />
-              Ihr Browser unterstützt das Video-Tag nicht.
-            </video>
-          </div>
-        </div>
-        </div>
-
       </div>
     </div>
   );
