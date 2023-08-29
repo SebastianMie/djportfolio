@@ -69,7 +69,7 @@ function Home() {
   }, [text1, text2, animateText]);
 
   return (
-    <div className="home1-vh" id="home">
+    <div id="home" style={{ marginBottom: '2rem' }}>
       <div className="row-container-center flex-column align-items-center justify-content-center">
         <animated.div className="row-container-center" style={textAnimation}>
           <div className="picture-home1">

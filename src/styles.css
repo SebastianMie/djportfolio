@@ -100,12 +100,19 @@ body {
   }
 
   .video-container {
-    max-width: 80%;      /* Maximale Breite, die das Video haben sollte */
-    margin-top: 2rem;   /* Abstand von oben */
-    z-index: 1;         /* Stapelreihenfolge (falls erforderlich) */
-    position: relative; /* Verwenden Sie dies, um sicherzustellen, dass das Video innerhalb seiner Container bleibt */
-}
-
+    max-width: 80%;
+    margin-top: 2rem;
+    z-index: 1;
+    display: flex; /* Fügen Sie Flexbox hinzu */
+    justify-content: center; /* Zentrieren Sie das Video horizontal */
+    align-items: center;
+  }
+  
+  .video-container video {
+    height: 100%;
+    width: auto; /* Passen Sie das Video-Verhältnis an */
+  }
+  
 
   .row-container {
     display: flex;
@@ -147,17 +154,14 @@ body {
 
   .home-vh {
     height: 100vh;
-    overflow-y: auto;
   }
 
   .home1-vh {
     height: 60vh;
-    overflow-y: auto;
   }
 
   .home2-vh {
-    height: 45vh;
-    overflow-y: auto;
+    height: 40vh;
   }
 
   .home-text-container {
@@ -314,6 +318,11 @@ body {
   .picture-home1 {
     max-height: 300px;
     max-width: 300px;
+    align-self: center;
+  }
+
+  .picture-home2 {
+    
     align-self: center;
   }
 

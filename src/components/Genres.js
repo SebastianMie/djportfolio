@@ -44,7 +44,7 @@ function Genres() {
   });
 
   return (
-    <div className="home2-vh" id="genres">
+    <div id="genres" style={{ marginBottom: '2rem' }}>
       <div className="row-container-center align-items-center justify-content-center">
         
           <div className="picture-home1">

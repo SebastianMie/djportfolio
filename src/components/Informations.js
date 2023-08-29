@@ -64,7 +64,7 @@ function Informations() {
     }
   };
   return (
-    <div className="home2-vh" id="information">
+    <div id="information" style={{ marginBottom: '2rem' }}>
      <div className="row-container-center flex-column align-items-center justify-content-center">
         <animated.div className="row-container-center" style={textAnimation}>
             <div className="picture-home1">

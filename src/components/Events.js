@@ -46,44 +46,44 @@ function Events() {
   }
 
   return (
-    <div className="home-vh" id="events" style={{ marginBottom: '2rem' }}>
-      <div className="row-container-center flex-column align-items-center justify-content-center">
-        <div className="picture-home1">
-          <animated.div style={{ opacity, transform, marginBottom: '1rem' }}>
-            <div className="large-bold-white blink">Events</div>
-          </animated.div>
-
-          <div className="row-container-center" style={{ marginBottom: '2rem' }}>
-            <div className="picture-home1">
-              <p className="bold-white" style={{ marginBottom: '1rem' }}>
-                Thinking Of You II
-              </p>
-              <p className="bold-white">
-                &nbsp;Ticket 12€ 28.10.23
-                <br></br>
-                <a href="https://paypal.me/untilbooking" target="_blank" rel="noopener noreferrer" className="blue-link">
-                  <img
-                  src={paypalLogo}
-                  alt="PayPal Logo"
-                  style={{ verticalAlign: 'middle' }}
-                />
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <div className="row-container-center" style={{ marginBottom: '2rem' }}>
-            <div className="picture-home1">
-              <video controls autoPlay loop muted style={{ height: '80%' }}>
-                <source src={video} type="video/mp4" />
-                Ihr Browser unterstützt das Video-Tag nicht.
-              </video>
-            </div>
-          </div>
+    <div id="events" style={{ marginBottom: '1rem' }}>
+      <div className="row-container-center" style={{ marginBottom: '2rem' }}>
+      <div className="picture-home1">
+        <animated.div style={{ opacity, transform, marginBottom: '1rem' }}>
+        <div className="picture-home2">
+        <div className="large-bold-white blink" style={{ marginBottom: '1rem' }}>
+          Events
         </div>
+          <p className="bold-white" style={{ marginBottom: '1rem' }}>
+            Thinking Of You II
+          </p>
+          <p className="bold-white" style={{ marginBottom: '0.5rem' }}>
+             &nbsp;Ticket 12€ 28.10.23
+          </p>
+            <br></br>
+            <a href="https://paypal.me/untilbooking" target="_blank" rel="noopener noreferrer" className="blue-link">
+              <img
+                src={paypalLogo}
+                alt="PayPal Logo"
+                style={{ verticalAlign: 'middle' }}
+              />
+            </a>
+        </div>
+        </animated.div>
+      </div>
+  
+      <div className="row-container-center">
+        <div className="picture-home2">
+          <video controls autoPlay loop muted style={{ height: '60%' }}>
+            <source src={video} type="video/mp4" />
+            Ihr Browser unterstützt das Video-Tag nicht.
+          </video>
+        </div>
+        </div>  
       </div>
     </div>
   );
+  
 }
 
 export default Events;
