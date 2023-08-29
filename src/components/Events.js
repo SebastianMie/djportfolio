@@ -48,17 +48,17 @@ function Events() {
   return (
     <div id="events" style={{ marginBottom: '1rem' }}>
       <div className="row-container-center" style={{ marginBottom: '2rem' }}>
-      <div className="picture-home1">
+      <div className="picture-home1" style={{ marginBottom: '2rem' }}>
         <animated.div style={{ opacity, transform, marginBottom: '1rem' }}>
-        <div className="picture-home2">
+        <div className="picture-home1">
         <div className="large-bold-white blink" style={{ marginBottom: '1rem' }}>
           Events
         </div>
           <p className="bold-white" style={{ marginBottom: '1rem' }}>
             Thinking Of You II
           </p>
-          <p className="bold-white" style={{ marginBottom: '0.5rem' }}>
-             &nbsp;Ticket 12€ 28.10.23
+          <p className="bold-white" >
+             &nbsp;Ticket / 28.10.23 / 12€ 
           </p>
             <br></br>
             <a href="https://paypal.me/untilbooking" target="_blank" rel="noopener noreferrer" className="blue-link">

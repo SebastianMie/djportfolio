@@ -322,7 +322,8 @@ body {
   }
 
   .picture-home2 {
-    
+    max-height: 30%;
+    max-width: 30%;
     align-self: center;
   }
 
