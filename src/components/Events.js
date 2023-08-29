@@ -73,13 +73,13 @@ function Events() {
       </div>
   
       <div className="row-container-center">
-        <div className="picture-home2">
-          <video controls autoPlay loop muted style={{ height: '60%' }}>
+        <div className="picture-home2 video-container">
+          <video controls autoPlay loop muted style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
             <source src={video} type="video/mp4" />
             Ihr Browser unterstützt das Video-Tag nicht.
           </video>
         </div>
-        </div>  
+      </div>  
       </div>
     </div>
   );
