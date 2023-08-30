@@ -46,7 +46,7 @@ function Events() {
   }
 
   return (
-    <div id="events" style={{ marginBottom: '1rem' }}>
+    <div id="events" style={{ marginBottom: '2rem' }}>
       <div className="row-container-center" style={{ marginBottom: '2rem' }}>
       <div className="picture-home1" style={{ marginBottom: '1rem' }}>
         <animated.div style={{ opacity, transform, marginBottom: '1rem' }}>

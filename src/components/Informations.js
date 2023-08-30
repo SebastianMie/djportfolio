@@ -68,17 +68,21 @@ function Informations() {
      <div className="row-container-center flex-column align-items-center justify-content-center">
         <animated.div className="row-container-center" style={textAnimation}>
             <div className="picture-home1">
-            <div className="large-bold-white animated-text">
-                <span className="blink" style={{ borderRight: `2px solid ${blink ? 'white' : 'transparent'}`} }>{currentText}</span>
-              </div>
+            <div className="large-bold-white blink" style={{ marginBottom: '1rem' }}>
+              Information
+            </div>
               <div className="home-picture-container">
               <p className="bold-white">
               Seit 2 Jahren lege ich auf verschiedenen Events auf.
               </p>
               <p className="bold-white">
               In den Genres Techno und Hard Dance fühle ich mich am wohlsten.
-              Seit kurzem habe ich auch angefangen, Musik selber zu produzieren. 
-              Ich spiele verschiedenste Genres zu verschiedenen Anlässen, also melde dich gerne bei mir.
+              </p>
+              <p className="bold-white">
+              Seit kurzem habe ich auch angefangen, Musik selber zu produzieren.
+              </p>
+              <p className="bold-white">
+              Ich spiele passende Genres zu verschiedenen Anlässen, also melde dich gerne bei mir.
               </p>
               </div>
             </div>
