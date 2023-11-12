@@ -57,21 +57,9 @@ function Events() {
           <p className="bold-white" style={{ marginBottom: '1rem' }}>
             Thinking Of You II
           </p>
-          <p className="bold-white" >
-             &nbsp;Ticket / 28.10.23 / 12€ 
-          </p>
-            <br></br>
-            <a href="https://paypal.me/untilbooking" target="_blank" rel="noopener noreferrer" className="blue-link">
-              <img
-                src={paypalLogo}
-                alt="PayPal Logo"
-                style={{ verticalAlign: 'middle' }}
-              />
-            </a>
         </div>
         </animated.div>
       </div>
-  
       <div className="row-container-center">
         <div className="picture-home2 video-container">
           <video controls autoPlay loop muted style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
