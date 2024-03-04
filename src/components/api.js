@@ -6,7 +6,7 @@ if (window.location.hostname === "localhost") {
   baseURL = 'http://localhost:3001';
 } else {
   baseURL = (window.location.protocol === 'https:') ? 
-      'https://untildj.site:3002' : 
+      'http://untildj.site:3001' : 
       'http://untildj.site:3001';
 }
 
