@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import api from "./api";
 import { useSpring, animated } from 'react-spring';
-
-import paypalLogo from "../assets/pictures/paypal-logo.png";
-
+import portrait from '../assets/pictures/portrait.jpg';
 function Events() {
   const [video, setVideo] = useState("");
   const [loading, setLoading] = useState(true);
@@ -21,7 +19,7 @@ function Events() {
         const videoResponse = await api.get('/api/events/video1', { responseType: 'arraybuffer' });
         setVideo(URL.createObjectURL(new Blob([videoResponse.data], { type: 'video/mp4' })));
 
-        console.log("Mediendaten erfolgreich abgerufen!");
+        console.log("Event Mediendaten erfolgreich abgerufen!");
         setLoading(false);
       } catch (error) {
         console.error("Fehler beim Abrufen der Daten:", error);
@@ -54,20 +52,32 @@ function Events() {
         <div className="large-bold-white blink" style={{ marginBottom: '1rem' }}>
           Events
         </div>
-          <p className="bold-white" style={{ marginBottom: '1rem' }}>
-            Thinking Of You II
+        <img
+              className="picture-home"
+              src={portrait}
+              alt="portrait"
+              style={{marginBottom: '1rem' }}
+            />
+          <p className="bold-white" style={{ marginBottom: '3rem' }}>
+            Thinking Of You II - 28.10.2023
           </p>
         </div>
         </animated.div>
       </div>
-      <div className="row-container-center">
         <div className="picture-home2 video-container">
-          <video controls autoPlay loop muted style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+          <video controls autoPlay loop muted style={{ width: '100%', height: '100%', objectFit: 'cover', marginTop: '4rem' }}>
             <source src={video} type="video/mp4" />
             Ihr Browser unterstützt das Video-Tag nicht.
           </video>
-        </div>
-      </div>  
+      </div>
+      <div className="picture-home2">
+      <p className="bold-white" style={{ marginBottom: '3rem', marginTop: '1rem' }}>
+            TBA - 14.06.2023
+          </p>
+          <p className="bold-white" style={{ marginBottom: '3rem' }}>
+            TBA - 12.07.2023
+          </p> 
+      </div>
       </div>
     </div>
   );
