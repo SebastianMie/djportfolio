@@ -72,10 +72,10 @@ function Events() {
       </div>
       <div className="picture-home2">
       <p className="bold-white" style={{ marginBottom: '3rem', marginTop: '1rem' }}>
-            TBA - 14.06.2023
+            War of Raw - 14.06.2024
           </p>
           <p className="bold-white" style={{ marginBottom: '3rem' }}>
-            TBA - 12.07.2023
+            Bass Invaderz - 12.07.2024
           </p> 
       </div>
       </div>
