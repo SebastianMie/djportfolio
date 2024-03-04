@@ -7,7 +7,7 @@ if (window.location.hostname === "localhost") {
 } else {
   baseURL = (window.location.protocol === 'https:') ? 
       'http://untildj.site:3001' : 
-      'http://untildj.site:3001';
+      'http://untildj.site:3002';
 }
 
 const instance = axios.create({
