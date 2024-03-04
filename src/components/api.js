@@ -3,10 +3,10 @@ import axios from 'axios';
 let baseURL;
 
 if (window.location.hostname === "localhost") {
-  baseURL = 'http://localhost:3001';
+  baseURL = 'http://localhost:3002';
 } else {
   baseURL = (window.location.protocol === 'https:') ? 
-      'http://untildj.site:3001' : 
+      'https://untildj.site:3003' : 
       'http://untildj.site:3002';
 }
 
